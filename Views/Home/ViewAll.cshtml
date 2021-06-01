@@ -1,0 +1,42 @@
+﻿@model List<Task1.Models.Consumer>
+
+<div>
+    <h4>Consumers</h4>
+    <hr />
+    @foreach (var x in Model)
+    {
+        <div class="card">
+        <div class="card-header d-flex">
+            <div>
+                Name
+            </div>
+            <div>
+                @x.Name
+            </div>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Button with data-target
+            </button>
+        </div>
+        <div class="collapse" id="collapse1">
+            <div class="card-body">
+                <div class="col-sm-2">
+                    Email
+                </div>
+                <div class="col-sm-10">
+                    @x.Email
+                </div>
+                <div class="col-sm-2">
+                    Current Balance
+                </div>
+                <div class="col-sm-10">
+                    @x.CurrentBalance Rs.
+                </div>
+            </div>
+        </div>
+        </div>
+    <hr />
+    }
+</div>
+<div>
+    <a asp-action="Index">Back to Home</a>
+</div>
